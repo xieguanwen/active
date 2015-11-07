@@ -1,67 +1,261 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head> 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-        <title>演示：PHP+jQuery+Ajax九宫格抽奖转盘</title>
-        <meta name="keywords" content="九宫格抽奖,PHP抽奖转盘" />
-        <meta name="description" content="分享一款jQuery九宫格大转盘抽奖代码网页特效，点击抽奖按钮开始随机抽奖选择奖品，可设置起点位置、奖品数量、转动次数、中奖位置参数，并且后台ajax.php可设置奖品和中奖概率。" />
-        <link rel="stylesheet" type="text/css" href="http://www.sucaihuo.com/jquery/css/common.css" />
-        <style type="text/css">
-            #lottery{width:574px;height:584px;margin:20px auto;background:url(images/bg.jpg) no-repeat;padding:50px 55px;}
-            #lottery table td{width:142px;height:142px;text-align:center;vertical-align:middle;font-size:24px;color:#333;font-index:-999}
-            #lottery table td a{width:284px;height:284px;line-height:150px;display:block;text-decoration:none;}
-            #lottery table td.active{background-color:#ea0000;}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>双11活动</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+</head>
 
-        </style>
-    </head>
-    <body>
-        <div class="head">
-            <div class="head_inner clearfix">
-                <ul id="nav">
-                    <li><a href="http://www.sucaihuo.com">首 页</a></li>
-                    <li><a href="http://www.sucaihuo.com/templates">网站模板</a></li>
-                    <li><a href="http://www.sucaihuo.com/js">网页特效</a></li>
-                    <li><a href="http://www.sucaihuo.com/php">PHP</a></li>
-                    <li><a href="http://www.sucaihuo.com/site">精选网址</a></li>
-                </ul>
-                <a class="logo" href="http://www.sucaihuo.com"><img src="http://www.sucaihuo.com/Public/images/logo.jpg" alt="素材火logo" /></a>
+<body>
+    <!--主banner-->
+    <div class="activity-header delayed" data-img="activity-header.jpg" data-load="false" style="height: 1044px;" data-now="true">
+    	<div class="relative">
+        	<a class="activity-header-link" href="http://www.xiaolajiao.com/">进入小辣椒官网<img src="images/icon.jpg"></a>
+        	<div class="activity-header-nav">
+            	<a class="" href="#main-phone"></a>
+                <a class="" href="#column-phone-title"></a>
+                <a class="" href="#column-parts-title"></a>
+                <a class="" href="#column-game-title"></a>
+            </div>
+        
+        	<div class="activity-header-coupon" id="coupon">
+        		<a href="javascript:void(0)" tabindex="88"><img src="http://theme.xiaolajiao.com/images/upload/image/2015110713/activity-header-10.jpg"></a>
+        		<a href="javascript:void(0)" tabindex="87"><img src="http://theme.xiaolajiao.com/images/upload/image/2015110713/activity-header-20.jpg"></a>
+                <a href="javascript:void(0)" tabindex="86"><img src="http://theme.xiaolajiao.com/images/upload/image/2015110713/activity-header-50.jpg"></a>
+        	</div>
+            
+        </div>  
+    </div>
+    
+    
+    <div class="main-phone"></a>
+    	<div class="main-phone-nx delayed" data-img="main-phone-nx.jpg" data-load="false" style="height: 855px;" data-now="true">
+            <div class="relative">
+            	<a href="http://www.xiaolajiao.com/goods-292.html" target="_blank">
+            		<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/nx-button.jpg">
+            	</a>
             </div>
         </div>
-        <div class="container">
+        <div class="main-phone-x1 delayed" data-img="main-phone-x1.jpg" data-load="false" style="height: 751px;" data-now="true">
+            <div class="relative">
+            	<a href="http://www.xiaolajiao.com/goods-287.html" target="_blank">
+            		<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/x1-button.jpg">
+            	</a>
+            </div>
+        </div>
+        <div class="main-phone-xm delayed" data-img="main-phone-xm.jpg" data-load="false" style="height: 746px;" data-now="true">
+            <div class="relative">
+                <a href="http://www.xiaolajiao.com/goods-288.html" target="_blank">
+                	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/xm-button.jpg">
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <div class="demo">
-                <h2 class="title"><a href="http://www.sucaihuo.com/js/129.html">教程：PHP+jQuery+Ajax九宫格抽奖转盘</a></h2>
-                <div id="lottery">
+	
+    <div class="column-phone"><a name="column-phone-title"></a>
+    	<div class="column-phone-title"><a name="main-phone"></a></div>
+        
+        <div class="relative">
+        	<ul>
+            	<li>
+                    <a href="http://www.xiaolajiao.com/goods-243.html" target="_blank"><img class="column-phone-img lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone01.jpg"></a>
+                    <a href="http://www.xiaolajiao.com/goods-243.html" target="_blank"><img class="column-phone-link1 lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone-link.jpg"></a>
+                    <a class="column-phone-link" href="http://www.xiaolajiao.com/goods-305.html" target="_blank">点击购买>></a>
+                </li>
+                
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-286.html" target="_blank"><img class="column-phone-img lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone02.jpg"></a>
+                    <a href="http://www.xiaolajiao.com/goods-286.html" target="_blank"><img class="column-phone-link2 lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone-link.jpg"></a>
+                </li>
+                
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-256.html" target="_blank"><img class="column-phone-img lazy" data-original="images/column-phone03.jpg"></a>
+                    <a href="http://www.xiaolajiao.com/goods-256.html" target="_blank"><img class="column-phone-link3 lazy" data-original="images/column-phone-link.jpg"></a>
+                </li>
+                
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-236.html" target="_blank"><img class="column-phone-img lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone04.jpg"></a>
+                    <a href="http://www.xiaolajiao.com/goods-236.html" target="_blank"><img class="column-phone-link4 lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone-link.jpg"></a>
+                </li>
+                
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-269.html" target="_blank"><img class="column-phone-img lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone05.jpg">
+                    </a>
+                    <a href="http://www.xiaolajiao.com/goods-269.html" target="_blank"><img class="column-phone-link5 lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-phone-link.jpg">
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-240.html" target="_blank">
+                    	<img class="column-phone-img lazy" data-original="images/column-phone06.jpg">
+                    </a>
+                    <a href="http://www.xiaolajiao.com/goods-240.html" target="_blank">
+                    	<img class="column-phone-link6 lazy" data-original="images/column-phone-link.jpg">
+                    </a>
+                </li>            
+            </ul>    
+        </div>
+    </div>
+
+
+	<div class="column-parts"><a name="column-parts-title"></a>
+    	<div class="column-parts-title"></div>
+        <div class="relative">
+            <ul>
+                <li>
+                	<a href="http://www.xiaolajiao.com/goods-302.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-01.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-261.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-02.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-62.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-03.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-62.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-04.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-62.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-05.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-104.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-06.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-104.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-07.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-104.html" target="_blank">
+                        <img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-08.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-200.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-09.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-200.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-10.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-61.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-11.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-61.html" target="_blank">
+                    	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-12.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.xiaolajiao.com/goods-61.html" target="_blank">
+                        <img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/column-parts-12.jpg">
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+	
+	<div class="column-game"><a name="column-game-title"></a>
+    	<div class="column-game-title"></div>
+   		<div class="column-game-content">
+        	<div class="relative">
+                <div class="lottery" id="lottery">
                     <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td class="lottery-unit lottery-unit-0"><img src="images/1.png"></td>
-                            <td class="lottery-unit lottery-unit-1"><img src="images/2.png"></td>
-                            <td class="lottery-unit lottery-unit-2"><img src="images/4.png"></td>
-                            <td class="lottery-unit lottery-unit-3"><img src="images/3.png"></td>
-                        </tr>
-                        <tr>
-                            <td class="lottery-unit lottery-unit-11"><img src="images/7.png"></td>
-                            <td colspan="2" rowspan="2"><a href="javascript:void(0);"></a></td>
-                            <td class="lottery-unit lottery-unit-4"><img src="images/5.png"></td>
-                        </tr>
-                        <tr>
-                            <td class="lottery-unit lottery-unit-10"><img src="images/1.png"></td>
-                            <td class="lottery-unit lottery-unit-5"><img src="images/6.png"></td>
-                        </tr>
-                        <tr>
-                            <td class="lottery-unit lottery-unit-9"><img src="images/3.png"></td>
-                            <td class="lottery-unit lottery-unit-8"><img src="images/6.png"></td>
-                            <td class="lottery-unit lottery-unit-7"><img src="images/8.png"></td>
-                            <td class="lottery-unit lottery-unit-6"><img src="images/7.png"></td>
-                        </tr>
-                    </table>
+                        <tbody>
+                            <tr>
+                                <td class="lottery-unit lottery-unit-0">
+                                	<img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-01.png">
+                                </td>
+                                <td class="lottery-unit lottery-unit-1"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-02.png">
+                                </td>
+                                <td class="lottery-unit lottery-unit-2"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-03.png">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="lottery-unit lottery-unit-7"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-04.png">
+                                </td>
+                                <td class="lottery-a"><a href="javascript:void(0);"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-05.png"></a>
+                                </td>
+                                <td class="lottery-unit lottery-unit-3"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-06.png">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="lottery-unit lottery-unit-6"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-07.png">
+                                </td>
+                                <td class="lottery-unit lottery-unit-5"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-08.png">
+                                </td>
+                                <td class="lottery-unit lottery-unit-4"><img class="lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/table-09.png">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> 
                 </div>
+                <!--奖品-->
+                <img class="prizes lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/prizes.jpg">
+                
+                <!--规则-->
+                <img class="rules lazy" data-original="http://theme.xiaolajiao.com/images/upload/image/2015110713/rules.jpg">
             </div>
+            <div id="dialog" style="display: none">
+                <p></p>
+            </div>
+        
         </div>
-        <div class="foot">
-            Powered by sucaihuo.com  本站皆为作者原创，转载请注明原文链接：<a href="http://www.sucaihuo.com" target="_blank">www.sucaihuo.com</a>
-        </div>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="js/lottery.js"></script>
-    </body>
+   </div>
+
+
+	<div class="activity-footer delayed" data-img="activity-footer.jpg" data-load="false" style="height: 378px;" data-now="true"></div>
+
+    <script type="text/javascript" src="http://theme.xiaolajiao.com/themes/newxlj/script/library/jquery-1.11.1.min.js?v=20150807"></script>
+    <script type="text/javascript" src="http://theme.xiaolajiao.com/themes/newxlj/script/library/jquery.lazyload.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            lazyCheck();
+            $(window).on('scroll',function(){
+                lazyCheck();
+            });
+            function lazyCheck(){
+                $(".delayed").each(function(){
+                    var a=$(this);
+                    if(($(window).scrollTop() + $(window).height() -a.offset().top >100) && a.attr("data-load") === "false" && a.attr("data-now") === "true"){
+                        a.css("background-image", "url(http://theme.xiaolajiao.com//images/upload/image/2015110713/" + a.attr("data-img") + ")");
+                        a.attr("data-load","true");
+                    }
+                });
+            }
+        });
+        $(function() {
+            $("img.lazy").lazyload({
+                threshold : 200,
+                effect : "fadeIn",
+                placeholder : "http://image.xiaolajiao.com/images/20150330/placeholder.gif"
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lottery.js"></script>
+    <script type="text/javascript" src="js/coupon.js"></script>
+    <script type="text/javascript" src="js/statistics.js"></script>
+</body>
 </html>

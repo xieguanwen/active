@@ -44,9 +44,18 @@ function roll() {
         clearTimeout(lottery.timer);
         lottery.prize = -1;
         lottery.times = 0;
-        click = false;
-        alert("中奖名称："+prize_name+"\n中奖id："+prize_id);
 
+        $("#dialog>p").html(prize_name);
+        $("#dialog").dialog({
+            modal: true,
+            buttons: {
+                "正确": function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+
+        click = false;
     } else {
         if (lottery.times < lottery.cycle) {
             lottery.speed -= 10;
@@ -77,16 +86,28 @@ $(function() {
             return false;
         } else {
             lottery.speed = 100;
-            $.getJSON("http://www.xlj.com/data.php?act=getPrize&callback=?",function(data){
+            $.getJSON("http://www.xlj.com/active/active1111.php?act=getPrize&callback=?",function(data){
                 if(data.data.login != undefined && data.data.login == 1){
                     location.href = data.data.backUrl;
                 } else {
-                    //console.log(data.data);
-                    $("#lottery").attr("prize_site", data.data.prize_site);
-                    $("#lottery").attr("prize_id", data.data.prize_id);
-                    $("#lottery").attr("prize_name", data.data.prize_name);
-                    roll();
-                    click = true;
+                    if(data.data.times == 2){
+                        $( "#dialog>p").html(data.data.content);
+                        $( "#dialog" ).dialog({
+                            modal: true,
+                            buttons: {
+                                "正确": function() {
+                                    $( this ).dialog( "close" );
+                                }
+                            }
+                        });
+                    } else {
+                        $("#lottery").attr("prize_site", data.data.prize_site);
+                        $("#lottery").attr("prize_id", data.data.prize_id);
+                        $("#lottery").attr("prize_name", data.data.prize_name);
+                        roll();
+                        click = true;
+                    }
+
                     return false;
                 }
 

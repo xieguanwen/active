@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin: 0; padding: 0;border:0;}
+body,a{font:14px "Microsoft YaHei","微软雅黑",Verdana, sans-serif; font-weight: normal; color: #666666; outline: 0;}
+ul, li{list-style: none;}
+a{text-decoration: none;}
+.relative{position:relative;margin:0 auto;width:1200px;}
+
+
+.activity-header{position:relative;background-color: #cd0622;background-repeat: no-repeat;background-position: center center;}
+.activity-header-link{position:absolute;right:72px;top:35px;color:#000000;font-size:16px;}
+.activity-header-link:hover{text-decoration: underline;}
+.activity-header-nav{position:absolute;top:597px;left:0;}
+.activity-header-nav a{float:left;width:295px;height:153px;margin-left:6px;}
+.activity-header-nav a:first-child{margin-left:1px;}
+.activity-header-coupon{position:absolute;top:802px;left:14px;}
+.activity-header-coupon a{margin-left:14px;}
+
+.main-phone{position:relative;}
+.main-phone-nx{background-repeat: no-repeat;background-position: center center;}
+.main-phone-nx img{position:absolute;top:696px;left:826px;}
+.main-phone-x1{background-repeat: no-repeat;background-position: center center;}
+.main-phone-x1 img{position:absolute;top:604px;left:75px;}
+.main-phone-xm{background-repeat: no-repeat;background-position: center center;}
+.main-phone-xm img{position:absolute;top:598px;left:74px;}
+
+.column-phone{position:relative;background-color:#f7f7f7;}
+.column-phone-title{background-image: url(http://theme.xiaolajiao.com//images/upload/image/2015110713/column-phone-title.jpg);background-repeat: no-repeat;background-position: center center;height:176px;background-color:#7a00d5;}
+.column-phone ul{margin-top:3px;margin-bottom:19px;overflow: hidden;}
+.column-phone ul li{float:left;position:relative;margin-top:7px;}
+.column-phone-link1{position:absolute;top:268px;left:76px;}
+.column-phone-link2{position:absolute;top:268px;left:62px;}
+.column-phone-link3{position:absolute;top:283px;left:76px;}
+.column-phone-link4{position:absolute;top:283px;left:62px;}
+.column-phone-link5{position:absolute;top:269px;left:76px;}
+.column-phone-link6{position:absolute;top:269px;left:62px;}
+.column-phone-link{position:absolute;bottom:36px;right:48px;color:#ee0a3b;}
+.column-phone-link:hover{text-decoration: underline;}
+.column-phone-link1:hover,.column-phone-link2:hover,.column-phone-link3:hover,.column-phone-link4:hover,.column-phone-link5:hover,.column-phone-link6:hover{border:solid 1px #ee0a3b;}
+
+
+.column-parts{position:relative;background-color:#f7f7f7;}
+.column-parts-title{background-image: url(http://theme.xiaolajiao.com//images/upload/image/2015110713/column-parts-title.jpg);background-repeat: no-repeat;background-position: center center;height:176px;background-color:#7a00d5;}
+.column-parts ul{margin-top:19px;margin-bottom:27px;overflow: hidden;}
+.column-parts ul li{float:left;}
+
+/*游戏*/
+.column-game{position:relative;background-color:#f7f7f7;}
+.column-game-title{background-image: url(http://theme.xiaolajiao.com//images/upload/image/2015110713/column-game-title.jpg);background-repeat: no-repeat;background-position: center center;height:176px;background-color:#7a00d5;}
+.column-game-content{position:relative;height:776px;}
+
+.lottery{position: absolute;width:645px;height:557px;background-image:url(http://theme.xiaolajiao.com//images/upload/image/2015110713/table.jpg);background-repeat: no-repeat;background-position: center center;top:95px;left:21px;}
+.lottery table{margin-top:30px;margin-left:32px;}
+.lottery-a{float:left;margin:3px 4px;width:186px;height:159px;}
+.lottery-unit{float:left;margin:3px 4px;width:186px;height:159px;}
+.lottery-unit-0,.lottery-unit-2,.lottery-unit-3,.lottery-unit-4,.lottery-unit-6,.lottery-unit-7{background-color:#ffe442;}
+.lottery-unit-1,.lottery-unit-5{background-color:#ffc342;}
+.active{background-color: #4f42ff;}
+
+.prizes{position:absolute;left:722px;top:120px;}        
+.rules{position:absolute;left:722px;top:416px;} 
+
+
+.activity-footer{position:relative;background-repeat: no-repeat;background-position: center center;}
