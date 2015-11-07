@@ -77,14 +77,19 @@ $(function() {
             return false;
         } else {
             lottery.speed = 100;
-            $.getJSON("http://www.xlj.com/data.php?method=gerPrize&callback=?",function(data){
-                console.log(data.data);
-                //$("#lottery").attr("prize_site", data.data.prize_site);
-                //$("#lottery").attr("prize_id", data.data.prize_id);
-                //$("#lottery").attr("prize_name", data.data.prize_name);
-                //roll();
-                click = true;
-                return false;
+            $.getJSON("http://www.xlj.com/data.php?act=getPrize&callback=?",function(data){
+                if(data.data.login != undefined && data.data.login == 1){
+                    location.href = data.data.backUrl;
+                } else {
+                    //console.log(data.data);
+                    $("#lottery").attr("prize_site", data.data.prize_site);
+                    $("#lottery").attr("prize_id", data.data.prize_id);
+                    $("#lottery").attr("prize_name", data.data.prize_name);
+                    roll();
+                    click = true;
+                    return false;
+                }
+
             });
 
             //$.post("ajax.php", {uid: 1}, function(data) { //获取奖品，也可以在这里判断是否登陆状态
